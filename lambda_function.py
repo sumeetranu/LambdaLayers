@@ -9,9 +9,9 @@ def lambda_handler(event, context):
     dataset3= ParquetDataset("s3://superpods-lambda-layer/wrongdata.parquet", filesystem=s3) 
 
     boolean_result_1v2 = dataset1.schema.equals(dataset2.schema)
-    print("1 vs 2: " + str(boolean_result_1v2))
+    print("1 schema matches 2: " + str(boolean_result_1v2))
     boolean_result_1v3 = dataset1.schema.equals(dataset3.schema)
-    print("1 vs 2: " + str(boolean_result_1v3))
+    print("1 schema matches 3: " + str(boolean_result_1v3))
     
     return {
         'statusCode': 200,
